@@ -1,11 +1,13 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export TERM:xterm\x2d256color
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/Users/matiaspiqueras/\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/Users/matiaspiqueras/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/Users/matiaspiqueras\x24
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
+SETUVAR _fish_abbr_mux:tmuxinator
 SETUVAR _fisher_jethrokuan_2F_z_files:/Users/matiaspiqueras/\x2econfig/fish/functions/__z\x2efish\x1e/Users/matiaspiqueras/\x2econfig/fish/functions/__z_add\x2efish\x1e/Users/matiaspiqueras/\x2econfig/fish/functions/__z_clean\x2efish\x1e/Users/matiaspiqueras/\x2econfig/fish/functions/__z_complete\x2efish\x1e/Users/matiaspiqueras/\x2econfig/fish/conf\x2ed/z\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/matiaspiqueras/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/matiaspiqueras/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejethrokuan/z
@@ -36,4 +38,5 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/Users/matiaspiqueras/\x2eemacs\x2ed/bin\x1e/Users/matiaspiqueras/\x2elocal/bin\x1e/opt/homebrew/bin
+SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_user_paths:/opt/homebrew/opt/openjdk/bin\x1e/opt/homebrew/opt/node\x4016/bin\x1e/Library/TeX/texbin\x1e/Library\x1e/usr/local/texlive/2021/bin/universal\x2ddarwin\x1e/Users/matiaspiqueras/\x2eemacs\x2ed/bin\x1e/Users/matiaspiqueras/\x2elocal/bin\x1e/opt/homebrew/bin
