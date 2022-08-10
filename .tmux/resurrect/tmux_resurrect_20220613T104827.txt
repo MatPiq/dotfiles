@@ -1,0 +1,15 @@
+pane	4	1	1	:*	1	:/Users/matiaspiqueras/University/m2/master-thesis/paper	1	fish	:/opt/homebrew/bin/fish
+pane	5	1	1	:*	1	:/Users/matiaspiqueras/University/m2/master-thesis/paper/main-article	1	fish	:/opt/homebrew/bin/fish
+pane	7	1	1	:*	1	:/Users/matiaspiqueras/University/m2/master-thesis/RlassoModels	1	fish	:/opt/homebrew/bin/fish
+pane	python-data-collection	1	1	:*	1	:/Users/matiaspiqueras	1	fish	:/opt/homebrew/bin/fish
+pane	rlassopy	1	0	:-	1	:/Users/matiaspiqueras/dotfiles/nvim/.config/nvim/lua/user	1	fish	:/opt/homebrew/bin/fish
+pane	rlassopy	2	0	:	1	:/Users/matiaspiqueras	1	fish	:/opt/homebrew/bin/fish
+pane	rlassopy	3	1	:*	1	:/Users/matiaspiqueras	1	fish	:/opt/homebrew/bin/fish
+window	4	1	:fish	1	:*	bb1e,220x63,0,0,1	:
+window	5	1	:fish	1	:*	beff,109x63,0,0,2	:
+window	7	1	:fish	1	:*	bb20,220x63,0,0,3	:
+window	python-data-collection	1	:fish	1	:*	bb21,220x63,0,0,4	:
+window	rlassopy	1	:fish	0	:-	bb22,220x63,0,0,5	:
+window	rlassopy	2	:fish	0	:	bb23,220x63,0,0,6	:
+window	rlassopy	3	:spotify	1	:*	bb24,220x63,0,0,7	off
+state	5	

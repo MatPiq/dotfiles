@@ -1,0 +1,17 @@
+pane	4	1	1	:*	1	:/Users/matiaspiqueras/University/m2/master-thesis/paper	1	fish	:/opt/homebrew/bin/fish
+pane	5	1	1	:*	1	:/Users/matiaspiqueras/University/m2/master-thesis/paper/main-article	1	fish	:/opt/homebrew/bin/fish
+pane	6	1	1	:*	1	:/Users/matiaspiqueras/.config/nvim/lua/user	1	tmux	:/opt/homebrew/bin/fish
+pane	7	1	1	:*	1	:/Users/matiaspiqueras/University/m2/master-thesis/RlassoModels	1	fish	:/opt/homebrew/bin/fish
+pane	python-data-collection	1	1	:*	1	:/Users/matiaspiqueras	1	fish	:/opt/homebrew/bin/fish
+pane	rlassopy	1	0	:-	1	:/Users/matiaspiqueras/dotfiles/nvim/.config/nvim/lua/user	1	fish	:/opt/homebrew/bin/fish
+pane	rlassopy	2	0	:	1	:/Users/matiaspiqueras	1	fish	:/opt/homebrew/bin/fish
+pane	rlassopy	3	1	:*	1	:/Users/matiaspiqueras/dotfiles/alacritty/.config/alacritty	1	fish	:/opt/homebrew/bin/fish
+window	4	1	:fish	1	:*	c59e,206x65,0,0,1	:
+window	5	1	:fish	1	:*	c59f,206x65,0,0,2	:
+window	6	1	:tmux	1	:*	c385,102x65,0,0,8	:
+window	7	1	:fish	1	:*	c5a0,206x65,0,0,3	:
+window	python-data-collection	1	:fish	1	:*	c5a1,206x65,0,0,4	:
+window	rlassopy	1	:fish	0	:-	c5a2,206x65,0,0,5	:
+window	rlassopy	2	:fish	0	:	c5a3,206x65,0,0,6	:
+window	rlassopy	3	:spotify	1	:*	c5a4,206x65,0,0,7	off
+state	6	
