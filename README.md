@@ -1,6 +1,6 @@
 # Dotfiles
 
-My MacOS dotfiles for:
+My MacOS dotfiles:
 
 - Neovim
 - Tmux
