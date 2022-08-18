@@ -71,29 +71,13 @@ return packer.startup(function(use)
   use({ "hrsh7th/nvim-cmp" }) --, commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin
   use({ "hrsh7th/cmp-buffer" }) --, commit = "62fc67a2b0205136bc3e312664624ba2ab4a9323" } -- buffer completions
   use({ "hrsh7th/cmp-path" }) --, commit = "466b6b8270f7ba89abd59f402c73f63c7331ff6e" } -- path completions
+  use("hrsh7th/cmp-cmdline") -- cmdline completions
   use({ "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" }) -- snippet completions
+  use("hrsh7th/cmp-emoji")
   use({ "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" })
   use({ "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" })
-  use({
-    "tzachar/cmp-tabnine",
-    config = function()
-      local tabnine = require("cmp_tabnine.config")
-      tabnine:setup({
-        max_lines = 1000,
-        max_num_results = 20,
-        sort = true,
-        run_on_every_keystroke = true,
-        snippet_placeholder = "..",
-        ignored_file_types = { -- default is not to ignore
-          -- uncomment to ignore in lua:
-          -- lua = true
-        },
-      })
-    end,
-
-    run = "./install.sh",
-    requires = "hrsh7th/nvim-cmp",
-  })
+  use("zbirenbaum/copilot-cmp")
+  use({ "tzachar/cmp-tabnine", commit = "1a8fd2795e4317fd564da269cc64a2fa17ee854e", run = "./install.sh" })
 
   -- snippets
   use({ "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" }) --snippet engine
@@ -104,11 +88,21 @@ return packer.startup(function(use)
   use({ "williamboman/nvim-lsp-installer" }) --, commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
   use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
   use({ "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" })
-  use({ "simrat39/rust-tools.nvim", commit = "11dcd674781ba68a951ab4c7b740553cae8fe671" })
-  use({ "github/copilot.vim" })
   use("simrat39/symbols-outline.nvim")
   use("ray-x/lsp_signature.nvim")
   use("p00f/clangd_extensions.nvim")
+  use({
+    "zbirenbaum/copilot.lua",
+    event = { "VimEnter" },
+    config = function()
+      vim.defer_fn(function()
+        require("user.copilot")
+      end, 100)
+    end,
+  })
+  use("j-hui/fidget.nvim")
+  use("lvimuser/lsp-inlayhints.nvim")
+  use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
 
   -- Telescope
   use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
@@ -136,8 +130,22 @@ return packer.startup(function(use)
   -- JAVA
   use("mfussenegger/nvim-jdtls")
 
+  -- Rust
+  use({ "christianchiarulli/rust-tools.nvim", branch = "modularize_and_inlay_rewrite" })
+  use("Saecki/crates.nvim")
+
+  -- run code
+  use("is0n/jaq-nvim")
+
   -- Writing
   use("lervag/vimtex")
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    ft = "markdown",
+  })
+  -- Motion and editing
+  use("phaazon/hop.nvim")
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

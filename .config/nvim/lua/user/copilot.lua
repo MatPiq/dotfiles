@@ -1,25 +1,35 @@
--- use this table to disable/enable filetypes
-vim.g.copilot_filetypes = { xml = false, latex=false }
+-- For copilot.vim
+-- vim.g.copilot_filetypes = {
+--   ["*"] = false,
+-- }
 
--- since most are enabled by default you can turn them off
--- using this table and only enable for a few filetypes
--- vim.g.copilot_filetypes = { ["*"] = false, python = true }
+-- vim.cmd [[
+--   imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")
+--   let g:copilot_no_tab_map = v:true
+-- ]]
 
+local status_ok, copilot = pcall(require, "copilot")
+if not status_ok then
+	return
+end
 
--- imap <silent><script><expr> <C-a> copilot#Accept("\<CR>")
-vim.g.copilot_no_tab_map = true
--- vim.keymap.set.keymap("i", "<C-e>", ":copilot#Accept('\\<CR>')<CR>", { silent = true })
-vim.api.nvim_set_keymap("i", "<C-a>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
--- <C-]>                   Dismiss the current suggestion.
--- <Plug>(copilot-dismiss)
---
---                                                 *copilot-i_ALT-]*
--- <M-]>                   Cycle to the next suggestion, if one is available.
--- <Plug>(copilot-next)
---
---                                                 *copilot-i_ALT-[*
--- <M-[>                   Cycle to the previous suggestion.
--- <Plug>(copilot-previous)
-
-
-vim.cmd[[highlight CopilotSuggestion guifg=#555555 ctermfg=8]]
+copilot.setup({
+	cmp = {
+		enabled = true,
+		method = "getCompletionsCycling",
+	},
+	panel = { -- no config options yet
+		enabled = true,
+	},
+	ft_disable = { "markdown" },
+	-- plugin_manager_path = vim.fn.stdpath "data" .. "/site/pack/packer",
+	server_opts_overrides = {
+		-- trace = "verbose",
+		settings = {
+			advanced = {
+				-- listCount = 10, -- #completions for panel
+				inlineSuggestCount = 3, -- #completions for getCompletions
+			},
+		},
+	},
+})
