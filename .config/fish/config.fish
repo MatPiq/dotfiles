@@ -10,13 +10,21 @@
 eval /Users/matiaspiqueras/opt/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 # <<< conda initialize <<<
 
-#
-# #powerline fonts
+# powerline fonts
 set -g theme_powerline_fonts no
 set -g theme_nerd_fonts yes
 set -g fish_key_bindings fish_vi_key_bindings
-#set -Ux TERM xterm-256color
-# #set kterm
+
+# defaults
+set -gx EDITOR nvim
+set -gx VISUAL nvim
+set -gx BROWSER firefox
+
+set -gx BAT_THEME "base16"
+set -l theme_path ~/.config/fish/zenbones.fish
+if status is-interactive; and test -f $theme_path
+  source $theme_path
+end
 
 #alias for ll
 if type -q exa
