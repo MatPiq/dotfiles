@@ -73,7 +73,7 @@ cmp.setup({
     ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+    ["<C-a>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<m-o>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-c>"] = cmp.mapping({
@@ -173,12 +173,33 @@ cmp.setup({
     { name = "crates", group_index = 1 },
     {
       name = "copilot",
-      -- keyword_length = 0,
+      keyword_length = 0,
       max_item_count = 3,
-      -- trigger_characters = {
-      --   { ".", ":", "(", "'", '"', "[", ",", "#", "*", "@", "|", "=", "-", "{", "/", "\\", "+", "?", " ", "\t", "\n" },
-      -- },
-
+      trigger_characters = {
+        {
+          ".",
+          ":",
+          "(",
+          "'",
+          '"',
+          "[",
+          ",",
+          "#",
+          "*",
+          "@",
+          "|",
+          "=",
+          "-",
+          "{",
+          "/",
+          "\\",
+          "+",
+          "?",
+          " ",
+          "\t",
+          "\n",
+        },
+      },
       group_index = 2,
     },
     {

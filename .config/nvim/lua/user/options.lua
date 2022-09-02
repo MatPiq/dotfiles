@@ -1,6 +1,6 @@
 vim.opt.backup = false -- creates a backup file
 vim.opt.clipboard = "unnamedplus" -- allows neovim to access the system clipboard
-vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
+vim.opt.cmdheight = 0 -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
 vim.opt.fileencoding = "utf-8" -- the encoding written to a file
@@ -24,8 +24,8 @@ vim.opt.expandtab = true -- convert tabs to spaces
 vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 2 -- insert 2 spaces for a tab
 vim.opt.cursorline = true -- highlight the current line
-vim.opt.relativenumber = false -- set numbered lines
-vim.opt.number = false -- set numbered lines
+vim.opt.relativenumber = true -- set numbered lines
+vim.opt.number = true -- set numbered lines
 vim.opt.laststatus = 3
 vim.opt.showcmd = false
 vim.opt.ruler = false
@@ -46,3 +46,9 @@ vim.o.autochdir = true
 -- Zenbones settings
 vim.opt.background = "light"
 vim.g.zenbones_italic_comments = true
+-- vim.g.zenbones_lightness = "bright"
+vim.g.zenbones_solid_line_nr = false
+vim.g.zenbones_solid_vert_split = true
+vim.g.zenones_solid_float_border = true
+
+vim.g.vimwiki_global_ext = 0

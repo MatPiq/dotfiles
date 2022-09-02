@@ -5,6 +5,7 @@ end
 
 local servers = {
   "sumneko_lua",
+  "texlab",
   "cssls",
   "html",
   "tsserver",
@@ -16,6 +17,7 @@ local servers = {
   "rust_analyzer",
   "taplo",
   "jdtls",
+  "marksman",
 }
 
 lsp_installer.setup()
@@ -38,19 +40,45 @@ for _, server in pairs(servers) do
     opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
   end
 
+  if server == "marksman" then
+    opts = vim.tbl_deep_extend("force", marksman_, opts)
+  end
+
   if server == "pyright" then
     local pyright_opts = require("user.lsp.settings.pyright")
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
   end
+  --
+  -- if server == "rust_analyzer" then
+  --   local rust_opts = require("user.lsp.settings.rust")
+  --   -- opts = vim.tbl_deep_extend("force", rust_opts, opts)
+  --   local rust_tools_status_ok, rust_tools = pcall(require, "rust-tools")
+  --   if not rust_tools_status_ok then
+  --     return
+  --   end
+  --
+  --   rust_tools.setup(rust_opts)
+  --   goto continue
+  -- end
 
   if server == "sourcery" then
-    local sourcery_opts = require("user.lsp.settings.sourcery")
+    local sourcery_opts = require("user.lsp.settings.sourcery").setup()
     opts = vim.tbl_deep_extend("force", sourcery_opts, opts)
   end
 
   if server == "jdtls" then
     goto continue
   end
+
+  if server == "texlab" then
+    local texlab_opts = require("user.lsp.settings.texlab")
+    opts = vim.tbl_deep_extend("force", texlab_opts, opts)
+  end
+
+  -- if server == "marksman" then
+  --   local marksman_opts = require("user.lsp.settings.marksman")
+  --   opts = vim.tbl_deep_extend("force", marksman_opts, opts)
+  -- end
 
   if server == "clangd" then
     require("clangd_extensions").setup({

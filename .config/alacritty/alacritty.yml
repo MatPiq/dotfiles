@@ -58,29 +58,30 @@ colors:
 font:
   # Normal (roman) font face
   normal:
-    family: MesloLGL Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     style: Regular
 
     # Bold font face
   bold:
-    family: MesloLGL Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     style: Bold
 
   # Italic font face
   italic:
-    family: MesloLGL Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: MesloLGL Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
-  size: 13.0
+  size: 14.0
   offset:
     y: 2
+    x: 0
 
 alt_send_esc: false
 
@@ -89,8 +90,8 @@ window:
   decorations: buttonless
   opacity: 1
   padding:
-    y: 1
-    x: 3
+    y: 2
+    x: 2
 
 shell:
   program: /opt/homebrew/bin/fish

@@ -66,6 +66,11 @@ return packer.startup(function(use)
   use("mcchrish/zenbones.nvim")
   use("rebelot/kanagawa.nvim")
   use("luisiacc/gruvbox-baby")
+  use("RRethy/nvim-base16")
+  use("ishan9299/modus-theme-vim")
+  use("d00h/nvim-rusticated")
+
+  -- use("vimpostor/vim-tpipeline")
 
   -- cmp plugins
   use({ "hrsh7th/nvim-cmp" }) --, commit = "df6734aa018d6feb4d76ba6bda94b1aeac2b378a" } -- The completion plugin
@@ -102,8 +107,9 @@ return packer.startup(function(use)
   })
   use("j-hui/fidget.nvim")
   use("lvimuser/lsp-inlayhints.nvim")
-  use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
 
+  -- Buffers
+  use("ghillb/cybu.nvim")
   -- Telescope
   use({ "nvim-telescope/telescope.nvim", commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
 
@@ -111,6 +117,28 @@ return packer.startup(function(use)
   use({ "nvim-treesitter/nvim-treesitter", commit = "518e27589c0463af15463c9d675c65e464efc2fe" })
 
   -- Orgmode
+  use({
+    "vimwiki/vimwiki",
+    config = function()
+      vim.g.vimwiki_list = {
+        {
+          path = "~/vimwiki",
+          template_path = "default",
+          template_default = "default",
+          syntax = "markdown",
+          ext = ".md",
+          path_html = "~/vimwiki",
+          custom_wiki2html = "vimwiki_markdown",
+          template_ext = ".tpl",
+        },
+      }
+      vim.g.vimwiki_ext2syntax = {
+        [".md"] = "markdown",
+        [".markdown"] = "markdown",
+        [".mdown"] = "markdown",
+      }
+    end,
+  })
 
   use({
     "nvim-orgmode/orgmode",
@@ -144,6 +172,7 @@ return packer.startup(function(use)
     run = "cd app && npm install",
     ft = "markdown",
   })
+  -- use("lewis6991/spellsitter.nvim")
   -- Motion and editing
   use("phaazon/hop.nvim")
 
