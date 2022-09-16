@@ -69,6 +69,7 @@ return packer.startup(function(use)
   use("RRethy/nvim-base16")
   use("ishan9299/modus-theme-vim")
   use("d00h/nvim-rusticated")
+  use("cranberry-clockworks/coal.nvim")
 
   -- use("vimpostor/vim-tpipeline")
 
